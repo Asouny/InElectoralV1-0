@@ -1,0 +1,63 @@
+<ion-header class="ion-text-center">
+  <ion-toolbar color="ine">
+    <ion-title>InElectoral</ion-title>
+    <ion-title>Inicio de sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content size="large">
+  <form class="ion-text-center" [formGroup]="myForm">
+
+      <ion-card>
+        <ion-img [src]="'https://ieecolima.org.mx/images/icon/ine2.svg'"></ion-img>
+      </ion-card>
+
+      <ion-card>
+        <ion-label>Favor de ingresar sus datos de inicio: </ion-label>
+
+        <ion-item class="home">
+          <ion-label position="floating">Correo electronico</ion-label>
+          <ion-input formControlName="email" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item
+          *ngIf="myForm.get('email').errors && (myForm.get('email').dirty || myForm.get('email').touched || submitted)">
+          <ion-label color="danger">Correo invalido</ion-label>
+        </ion-item>
+
+
+
+        <ion-item size="large">
+          <ion-label size="large" position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item
+          *ngIf="myForm.get('password').errors && (myForm.get('password').dirty || myForm.get('password').touched || submitted)">
+          <ion-label color="danger">Contraseña invalido</ion-label>
+        </ion-item>
+      </ion-card>
+
+
+
+      <ion-item>
+        <ion-button size="large" fill="outline" color="ine" (click)="signIn()">Iniciar</ion-button>
+        <ion-button size="large" fill="outline" color="ine" (click)="register()">Registrate</ion-button>
+      </ion-item>
+
+  </form>
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-toolbar color="ine">
+    <ion-item>
+
+      <ion-title>¿Necesitas ayuda?</ion-title>
+      <ion-button color='ine' (click)=contact()>
+        Contactanos
+      </ion-button>
+
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

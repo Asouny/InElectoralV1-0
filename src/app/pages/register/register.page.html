@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Registrate
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <form class="ion-padding" [formGroup]="myForm">
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+          </div>
+          <div padding>
+
+            <ion-item>
+              <ion-label>Nombre(s): </ion-label>
+              <ion-input formControlName="firstname" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Apellidos: </ion-label>
+              <ion-input formControlName="lastname" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>email: </ion-label>
+              <ion-input formControlName="email" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Foto de perfil: </ion-label>
+              <ion-input formControlName="photo" type="file" accept=".png, .jpg" (change)=onUpload($event)></ion-input>
+            </ion-item>
+            <input #imageUser type="hidden" [value]="urlImage | async">
+
+            <ion-item>
+              <ion-label>Ine Frontal: </ion-label>
+              <ion-input formControlName="photo2" type="file" accept=".png, .jpg" (change)=onUpload2($event)></ion-input>
+            </ion-item>
+            <input #imageine1 type="hidden" [value]="urlImage2 | async">
+
+            <ion-item>
+              <ion-label>Ine Posterior: </ion-label>
+              <ion-input formControlName="photo3" type="file" accept=".png, .jpg" (change)=onUpload3($event)></ion-input>
+            </ion-item>
+            <input #imageine2 type="hidden" [value]="urlImage3 | async">
+
+
+            <ion-item>
+              <ion-label>Curp: </ion-label>
+              <ion-input formControlName="curp" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Clave Electoral: </ion-label>
+              <ion-input formControlName="clvElectoral" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Fecha de nacimiento: </ion-label>
+              <ion-input formControlName="date" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>contraseña: </ion-label>
+              <ion-input formControlName="password" type="text"></ion-input>
+            </ion-item>
+
+          
+            
+
+          </div>
+          <div padding class="centrar">
+            
+            <ion-button size="large" disable=true type="button" color="secondary" [disabled]="!myForm.valid" (click)="createUser()"
+           expand="block">Guardar
+          </ion-button>
+
+            <ng-template #btnDisabled>
+              <ion-button *ngIf = 'urlImage | async; else btnDisable'
+               size="large" disable=true type="button" color="secondary" [disabled]="!myForm.valid" (click)="createUser()"
+              expand="block">Guardar
+            </ion-button>
+            </ng-template> 
+
+
+
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="ine">
+    <ion-title class="ion-text-center">
+      Credencial para votar virtual
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="ine">
+
+  <ion-card>
+    <div>
+      <ion-item>
+        <ion-label>INE Frontal</ion-label>
+      </ion-item>
+      <ion-card>
+        <img src="{{usuario.photo2}}" class="rounded-circle img-thumbnail" alt="profile">
+      </ion-card>
+    </div>
+  </ion-card>
+
+  <ion-card>
+
+    <div>
+      <ion-item>
+        <ion-label>INE Posterior</ion-label>
+      </ion-item>
+      <ion-card>
+        <img src="{{usuario.photo3}}" class="rounded-circle img-thumbnail" alt="profile">
+      </ion-card>
+    </div>
+  </ion-card>
+
+
+  <div>
+    <ion-item>
+      <ion-label>Clave electoral</ion-label>
+      <ion-badge color="ine" mode="ios">1234567890</ion-badge>
+    </ion-item>
+  </div>
+
+</ion-content>

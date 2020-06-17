@@ -1,0 +1,8 @@
+{
+  "name": "InElectoral",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="ine">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Perfil de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="ine">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="primary">
+        <h1 class="ion-text-center">{{usuario.firstname}} {{usuario.lastname}}</h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="ion-align-items-center ion-align-self-center">
+
+          
+          <img src="{{usuario.photo}}" class="rounded-circle img-thumbnail" alt="profile">
+        <ion-list class="ion-text-left">
+
+          <ion-item>
+            <ion-list>
+              <ion-label>Correo electronico: </ion-label>
+              <ion-label color="tertiary">{{usuario.email}}</ion-label>
+            </ion-list>
+          </ion-item>
+
+          <ion-item>
+            <ion-list>
+              <ion-label>Curp: </ion-label>
+              <ion-label color="tertiary">{{usuario.curp}}</ion-label>
+            </ion-list>
+          </ion-item>
+
+          <ion-item>
+            <ion-list>
+              <ion-label>Fecha de nacimiento: </ion-label>
+              <ion-label color="tertiary">{{usuario.date}}</ion-label>
+            </ion-list>
+          </ion-item>
+
+          <ion-item>
+            <ion-list>
+              <ion-label>Clave electoral: </ion-label>
+              <ion-label color="tertiary">{{usuario.clvElectoral}}</ion-label>
+            </ion-list>
+          </ion-item>
+
+          <ion-item class="ion-align-self-center">
+            <ion-list>
+              <ion-label>Voto registrado:</ion-label>
+              <ion-badge slot="end" color="primary">{{usuario.voto}}</ion-badge>
+            </ion-list>
+          </ion-item>
+
+        </ion-list>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
